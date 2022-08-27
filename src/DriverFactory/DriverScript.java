@@ -9,22 +9,23 @@ import utilities.ExcelFileUtil;
 
 
 public class DriverScript {
-	 String inputpath ="D\\selenium.8oclockBatch\\Hybrid_FrameWorkbatch\\TestInput\\HybridTest.xlsx";
-     String outputpath="D\\selenium.8oclockBatch\\DDT_FrameWorkbatch\\TestOutput\\HybridResults.xlsx";
-     String TCSheet ="MasterTestCases";
-     String TCSheet1 ="TestSteps";
-     @Test
-     public void startTest() throws Throwable
-     {
-    	 boolean res=false;
-    	 String tcres="";
-    	 //create object for excel file util
-    	 ExcelFileUtil xl = new ExcelFileUtil(inputpath);     
-    	 //count no of rows in both sheets
-    	 int TCCount = xl.rowCount(TCSheet);
-    	 int TSCount = xl.rowCount(TCSheet);
-    	 Reporter.log(TCCount+"     "+TSCount,true);
-    	 //iterate all rows in TCSheet
+	  String inputpath = "D\\selenium.8oclockBatch\\Hybrid_Frameworkbatch\\TestInput\\HybridTest.xlsx";
+	  String outputpath = "D\\selenium.8oclockBatch\\DDT_FrameWork\\TestOutPut\\HybridResults.xlsx";
+	  String TCSheet ="MaterTestCases";
+	  String TCSheet1 ="TestSteps";
+	  @Test
+	  public void starTest() throws Throwable
+	  {
+		  boolean res=false;
+		  String tcres ="";
+		  //create object for excel file util
+		  ExcelFileUtil xl =new ExcelFileUtil(inputpath);
+		  //count no of rows in both sheets 
+		  int TCCount =xl.rowCount(TCSheet);
+		  int TSCount =xl.rowCount(TCSheet);
+		  Reporter.log(TCCount+"   "+TSCount,true);
+		  //iterate all rows in TCSheet
+		  
     	 for(int i=1;i<=TCCount;i++)
     	 {
     		 String executionstatus =xl.getCelldata(TCSheet, i, 2);

@@ -20,18 +20,18 @@ public static Properties config;
 public void setup() throws Throwable
 {
 	config = new Properties();
-	config.load(new FileInputStream("D:\\selenium.8oclockBatch\\Hybrid_Frameworkbatch\\PropertyFiles\\primus.properties"));
+	config.load(new FileInputStream("D\\selenium.8oclockBatch\\Hybrid_Frameworkbatch\\PropertyFiles\\primus.properties"));
 	if(config.getProperty("Browser").equalsIgnoreCase("chrome"))
 	{
-		System.setProperty("webriver.chrome.driver","D:/chromedriver.exe");
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","D:/chromedriver.exe");
+		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(config.getProperty("Url"));
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 	else if(config.getProperty("Browser").equalsIgnoreCase("fireFox"))
 	{
-		System.setProperty("webdriver.gecko.driver","d:/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver","d:/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().deleteAllCookies();
 		driver.get(config.getProperty("Url"));
